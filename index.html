@@ -500,8 +500,17 @@ function compute(){
        9 — OFAJ
     =================================================== */
 
-    if(isStageMobility() && alle === "Oui" && !remunSup1200()){
-        block("9. OFAJ – Bourse de stage en Allemagne", `
+  if (
+    (
+        mob === "Stage d'ouverture ENSAE" ||
+        mob === "Stage d'application ENSAE" ||
+        mob === "Stage de fin d'études ENSAE" ||
+        mob === "Stage de fin d'études Master IP Paris & ENSAE"
+    )
+    && alle === "Oui"
+    && !remunSup1200()
+) {
+    block("9. OFAJ – Bourse de stage en Allemagne", `
         <p><strong>Éligibilité :</strong></p>
         <ul>
             <li>Stage obligatoire en Allemagne (≥ 1 mois).</li>
@@ -513,8 +522,8 @@ function compute(){
             <li>Transport : 0,16 €/km.</li>
         </ul>
         <p><strong>Candidature :</strong> via la DRI.</p>
-        `);
-    }
+    `);
+}
 
     /* ===================================================
        10 — BayFrance
